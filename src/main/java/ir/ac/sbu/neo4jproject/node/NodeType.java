@@ -1,4 +1,4 @@
-package ir.ac.sbu.mavenproject1.node;
+package ir.ac.sbu.neo4jproject.node;
 
 import org.neo4j.graphdb.Label;
 

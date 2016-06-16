@@ -1,6 +1,6 @@
-package ir.ac.sbu.mavenproject1.util;
+package ir.ac.sbu.neo4jproject.util;
 
-import ir.ac.sbu.mavenproject1.node.NodeType;
+import ir.ac.sbu.neo4jproject.node.NodeType;
 import java.util.Iterator;
 import org.neo4j.cypher.ExecutionEngine;
 import org.neo4j.cypher.ExecutionResult;

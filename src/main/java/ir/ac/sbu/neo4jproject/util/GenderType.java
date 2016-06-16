@@ -1,4 +1,4 @@
-package ir.ac.sbu.mavenproject1.util;
+package ir.ac.sbu.neo4jproject.util;
 
 public class GenderType {
 
