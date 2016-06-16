@@ -14,9 +14,14 @@ import org.neo4j.kernel.impl.util.StringLogger;
 
 public class Neo4jHelper {
 
+    private static GraphDatabaseService graphdb;
+
     public static GraphDatabaseService getGraphDb() {
-        GraphDatabaseFactory dbfactoryy = new GraphDatabaseFactory();
-        GraphDatabaseService graphdb = dbfactoryy.newEmbeddedDatabase("//Users//apple//Documents//Neo4j//default.graphdb");
+        if (graphdb == null) {
+            String path = "//Users//apple//Documents//Neo4j//default.graphdb";
+            GraphDatabaseFactory dbfactoryy = new GraphDatabaseFactory();
+            graphdb = dbfactoryy.newEmbeddedDatabase(path);
+        }
         return graphdb;
     }
 
