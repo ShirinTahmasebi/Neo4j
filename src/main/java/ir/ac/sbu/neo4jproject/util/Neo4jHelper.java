@@ -14,19 +14,24 @@ import org.neo4j.kernel.impl.util.StringLogger;
 
 public class Neo4jHelper {
 
-    private static GraphDatabaseService graphdb;
+    private static final GraphDatabaseService graphdb;
 
-    public static GraphDatabaseService getGraphDb() {
-        if (graphdb == null) {
-            String path = "//Users//apple//Documents//Neo4j//default.graphdb";
-            GraphDatabaseFactory dbfactoryy = new GraphDatabaseFactory();
-            graphdb = dbfactoryy.newEmbeddedDatabase(path);
-        }
-        return graphdb;
+    static {
+        String path = "//Users//apple//Documents//Neo4j//default.graphdb";
+        GraphDatabaseFactory dbfactoryy = new GraphDatabaseFactory();
+        graphdb = dbfactoryy.newEmbeddedDatabase(path);
     }
 
+//    public static GraphDatabaseService getGraphDb() {
+//        if (graphdb == null) {
+//            String path = "//Users//apple//Documents//Neo4j//default.graphdb";
+//            GraphDatabaseFactory dbfactoryy = new GraphDatabaseFactory();
+//            graphdb = dbfactoryy.newEmbeddedDatabase(path);
+//        }
+//        return graphdb;
+//    }
+
     public static Transaction createTransation() {
-        GraphDatabaseService graphdb = getGraphDb();
         Transaction tx = graphdb.beginTx();
         return tx;
     }
@@ -36,7 +41,7 @@ public class Neo4jHelper {
     }
 
     public static Node createNode(NodeType type) {
-        return getGraphDb().createNode(type);
+        return graphdb.createNode(type);
     }
 
     public static void setProperty(Node node, String propertyName, String propertyValue) {
@@ -51,12 +56,11 @@ public class Neo4jHelper {
         return fromNode.createRelationshipTo(toNode, type);
     }
 
-    public static Iterator getQueryResult(String query) {
-        ExecutionEngine engine = new ExecutionEngine(getGraphDb(), StringLogger.SYSTEM);
+    public static ExecutionResult getQueryResult(String query) {
+        ExecutionEngine engine = new ExecutionEngine(graphdb, StringLogger.SYSTEM);
         ExecutionResult result;
         result = engine.execute(query);
         System.out.println("getQueryResult " + result.dumpToString());
-        Iterator itr = result.javaIterator();
-        return itr;
+        return result;
     }
 }
