@@ -18,6 +18,9 @@ public class Tag {
      Relation Fields.
      */
     final public static String RELATION_RATE = "rate";
+    final public static String RELATION_USER_NAME = "userName";
+    final public static String RELATION_FILM_NAME = "filmName";
+    
 
     /*
      Pages Names.
