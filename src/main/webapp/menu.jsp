@@ -11,7 +11,7 @@
             <a href="add_rel.jsp" class="thirditem menu-item-line">افزودن&nbsp;رابطه</a>
             <a href="relations_list.jsp" class="forthitem menu-item-line">لیست&nbsp;روابط</a>
             <a href="users_list.jsp" class="fifthitem menu-item-line">لیست&nbsp;کاربران</a>
-            <a href="film_list.jsp" class="sixthitem menu-item-line">لیست&nbsp;فیلمها</a>
+            <a href="films_list.jsp" class="sixthitem menu-item-line">لیست&nbsp;فیلمها</a>
 
         </div>
         <div id="header">

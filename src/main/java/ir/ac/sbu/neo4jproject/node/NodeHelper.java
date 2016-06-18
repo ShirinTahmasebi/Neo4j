@@ -28,4 +28,15 @@ public class NodeHelper {
         node.setProperty(Tag.FILM_ID, Helper.generateUniqueId());
         node.setProperty(Tag.FILM_NAME, filmName);
     }
+
+    public static void createFilmNode(String filmName) {
+        try {
+            Transaction t = Neo4jHelper.createTransation();
+            Node node = Neo4jHelper.createNode(NodeType.Movie);
+            setFilmNodeProperties(node, filmName);
+            Neo4jHelper.commitTransaction(t);
+        } catch (Exception e) {
+
+        }
+    }
 }

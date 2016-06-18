@@ -27,19 +27,19 @@
                 <table id="itemsTable"class="table hover" collapsing="0" width="100%" >
                     <thead>
                         <tr>
-                            <th style="text-align:right; padding-right:25px;">کلید&nbspکاربر</th>
-                            <th style="text-align:right; padding-right:25px">نام&nbspکاربر</th>
+                            <th style="text-align:right; padding-right:25px;">کلید&nbspفیلم</th>
+                            <th style="text-align:right; padding-right:25px">نام&nbspفیلم</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <%  ExecutionResult res = Neo4jHelper.getQueryResult("match (n:Person) return n");
+                        <%  ExecutionResult res = Neo4jHelper.getQueryResult("match (n:Movie) return n");
                             Iterator<Node> nodes = res.columnAs("n");
                             while (nodes.hasNext()) {
-                                Node user = nodes.next();
+                                Node film = nodes.next();
                         %>
                         <tr>
-                            <td><%=user.getProperty(Tag.USER_ID)%></td>
-                            <td><%=user.getProperty(Tag.USER_NAME)%></td>
+                            <td><%=film.getProperty(Tag.FILM_ID)%></td>
+                            <td><%=film.getProperty(Tag.FILM_NAME)%></td>
                         </tr>
 
                         <%}%>
