@@ -12,6 +12,7 @@
             <a href="relations_list.jsp" class="forthitem menu-item-line">لیست&nbsp;روابط</a>
             <a href="users_list.jsp" class="fifthitem menu-item-line">لیست&nbsp;کاربران</a>
             <a href="films_list.jsp" class="sixthitem menu-item-line">لیست&nbsp;فیلمها</a>
+            <a href="recommends_list.jsp" class="seventhitem menu-item-line">لیست&nbsp;توصیهها</a>
 
         </div>
         <div id="header">
